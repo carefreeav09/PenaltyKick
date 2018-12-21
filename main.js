@@ -15,9 +15,10 @@ $( document ).ready(function() {
 
 
         if(diveDirection===1){
-            tlleft.to('.goalKeeper',0.5,{rotation:-20})
+            tlleft.to('.goalKeeper',0.1,{rotation:-20})
                 .set('.goalKeeper',{autoAlpha:0})
-                .to('.goalKeeper-dive', 1,{autoAlpha:1,rotation: -80,x:-200, y:-50, scale:1.4},'-=.5');
+                .to('.goalKeeper-dive', 1,{autoAlpha:1,rotation: -80,x:-200, y:-50, scale:1.4})
+                .to('.goalKeeper-dive', 1,{y:0},'-=.1');
 
         }
 
@@ -27,9 +28,10 @@ $( document ).ready(function() {
         }
 
         if(diveDirection===3){
-            tlRight.to('.goalKeeper',0.5,{rotation:20})
+            tlRight.to('.goalKeeper',0.1,{rotation:20})
                 .set('.goalKeeper',{autoAlpha:0})
-                .to('.goalKeeper-dive', 1,{autoAlpha:1,rotation: 60,x:200, y:-80, scale:1.2},'-=.5');
+                .to('.goalKeeper-dive', 1,{autoAlpha:1,rotation: 60,x:200, y:-50, scale:1.2})
+                .to('.goalKeeper-dive', 1,{y:0});
 
         }
 
@@ -64,7 +66,7 @@ $( document ).ready(function() {
     $( "#sStraight" ).click(function() {
 
         diveDirection();
-        tl.to('.item', 1 , {y:-350,x:15, ease:Power4.easeOut, scale:0.5})
+        tl.to('.item', 1 , {y:-400,x:15, ease:Power4.easeOut, scale:0.5})
             .set('.sLeft',{opacity:0},0 )
             .set('.item', {y:0, x:0, scale:1, opacity: 1},'=+1')
             .set('.sLeft', {opacity: 1});
@@ -88,9 +90,9 @@ $( document ).ready(function() {
     $( "#sRight" ).click(function() {
         diveDirection();
         tl.add(tlRight)
-            .to('.item', 1 , {y:-400,x:300, ease:Power4.easeOut, scale:0.5}, '-=1')
+            .to('.item', 1 , {y:-400,x:300, ease:Power4.easeOut, scale:0.5}, '-=2')
             .set('.sLeft',{opacity:0},0 )
-            .set('.item', {y:0, x:0, scale:1, opacity: 1},'=+.5')
+            .set('.item', {y:0, x:0, scale:1, opacity: 1},'=+1')
             .set('.sLeft', {opacity: 1});
 
         if(diveDirection == 3){
